@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Visualizating Elevation along Amtrak’s Empire Builder Line</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Katie Jolly" />
+    <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+    <script src="libs/anchor-sections/anchor-sections.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Visualizating Elevation along Amtrak’s Empire Builder Line
+### Katie Jolly
+### 2020-12-13 | R-Ladies Seattle
+
+---
+
+
+
+
+
+
+# The final product!
+
+&lt;img src="https://raw.githubusercontent.com/katiejolly/30-day-maps-2020/main/02-lines/amtrak_elevation.jpg" width="150%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# But where to start...
+
+---
+### 30 days of maps
+
+1. Points
+
+2. **Lines** &amp;larr; (we are here!)
+
+3. Polygons
+
+4. Hexagons...
+
+### What are some lines I can think of quickly?
+
+--
+* Transportation routes (bus/train/ferry/etc.)
+
+--
+
+* Elevation
+
+--
+
+* Roads
+
+--
+
+* Origin-destination data
+
+--
+
+* Joyplots
+
+---
+class: inverse, center, middle
+
+# Design time
+
+(I chose elevation &amp; the train route-- so many lines!)
+
+---
+
+# Consider your audience 😄
+
+1. Who is your audience?
+
+  * I was sharing my maps on Twitter and most of my followers are also R users and have some familiarity with the geography of the US
+
+2. How is your audience viewing your work?
+
+  * On Twitter, which means I need to be mindful of image size and color for the best viewing experience
+
+3. What do you want them to learn from it?
+
+  * The biggest takeaway should be how quickly the elevation changes along the route and how different each end is 
+  
+---
+
+# Find some data 🔎
+I keep a bookmark folder of interesting datasets &amp; articles/blog posts where I've seen them used well
+
+.left-column[
+&lt;br&gt;
+[U.S. Geological Survey, USGS Small-scale Dataset 🔖](https://www.sciencebase.gov/catalog/item/581d051de4b08da350d523c3) 
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+[Bureau of Transportation Statistics 🔖](https://data-usdot.opendata.arcgis.com/datasets/amtrak-routes)
+
+]
+
+.right-column[
+&lt;img src="http://prd-tnm.s3.amazonaws.com/StagedProducts/Small-scale/thumbnails/cont48l010a_shp.png" width="50%" /&gt;
+
+
+&lt;img src="img/amtrak.png" width="50%" /&gt;
+
+]
+
+---
+
+# Choose the colors 🎨
+
+&lt;img src="https://cdn.shopify.com/s/files/1/1529/3721/products/glacier-poster_1800x.jpg?v=1550751768" width="60%" style="display: block; margin: auto;" /&gt;
+
+[The Landmark Project](https://thelandmarkproject.com/products/glacier-national-park-poster)
+
+---
+
+# Add labels 📝
+
+Annotations can:
+
+* Guide your readers to the main point
+
+* Provide additional context
+
+* Reiterate important points
+
+But... *less is more!* 
+
+
+----
+
+I chose to use a few Amtrak stations along the way to anchor the route in recognizable places.
+
+Especially when sharing on social media, your title should be short and catchy! 
+
+**When working on a tight timeline I like to use Illustrator/Inkscape to add labels**
+
+
+---
+# Share your work! 📷 🎉
+
+I ❤️ using Twitter for this!
+
+&lt;img src="https://raw.githubusercontent.com/katiejolly/30-day-maps-2020/main/02-lines/amtrak_elevation.jpg" width="150%" style="display: block; margin: auto;" /&gt;
+
+---
+class: center, middle
+
+# See the code
+
+[Github link](https://github.com/katiejolly/30-day-maps-2020/blob/main/02-lines/02-lines_empire_builder.R)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
