@@ -1,7 +1,7 @@
 ---
 title: "Visualizating Elevation along Amtrak's Empire Builder Line"
-author: "Katie Jolly"
-date: '`r Sys.Date()` | R-Ladies Seattle'
+author: "Katie Jolly @ RLadies-Seattle\nkatiejolly.io/rladies-datavis-20"
+date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
     lib_dir: libs
